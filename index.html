@@ -19,7 +19,13 @@
             </form>
         </div>
         <div class="hero-image">
-            <img src="a.jpg" alt="Women talking at a café">
+            <img src="a.jpg" class="active" alt="Women talking at a café">
+            <img src="b.png" alt="">
+            <img src="c.png" alt="">
+            <img src="d.png" alt="">
+            <img src="e.png" alt="">
+            <img src="f.png" alt="">
+            <img src="e.png" alt="">
         </div>
     </header>
 
@@ -88,6 +94,19 @@
         </div>
         <p>&copy; 2023 InnerSiren</p>
     </footer>
-
+<script>
+    let currentIndex = 0
+    const images = document.querySelectorAll('.hero-image img')
+    function showImage(index){
+       images.forEach(img=>img.classList.remove('active'))
+       images[index].classList.add('active')
+    }
+    function nextImg(){
+        currentIndex = (currentIndex + 1) % images.length
+        showImage(currentIndex)
+    }
+    console.log(images.length)
+    setInterval(nextImg, 3000)
+</script>
 </body>
 </html>
